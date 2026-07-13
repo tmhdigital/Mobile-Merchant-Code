@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/merchent/merchent.iml" filepath="$PROJECT_DIR$/merchent/merchent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/merchent/android/merchent_android.iml" filepath="$PROJECT_DIR$/merchent/android/merchent_android.iml" />
+    </modules>
+  </component>
+</project>
