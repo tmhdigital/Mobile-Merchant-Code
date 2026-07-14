@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:merchent/screen/common_widget/common_text_widget.dart';
 import 'package:merchent/utils/app_size.dart';
+import 'package:merchent/widget/app_image/app_image.dart';
 
 class DevLogoText extends StatelessWidget {
   final TextAlign textAlignment;
@@ -20,13 +21,19 @@ class DevLogoText extends StatelessWidget {
     final isSmallScreen = screenHeight < 700;
     final isMobile = screenWidth < 400;
 
-    return TextWidget(
-      text: 'Logo',
-      textAlignment: textAlignment,
-      fontSize: AppSize.width(value: logoSize),
-      fontWeight: FontWeight.w700,
-      fontColor: Colors.white,
-     
+    return AppImage(
+      path: "assets/images/rewaldo-logo.png",
+      width: 250,
+      height: 150,
     );
+
+    // return TextWidget(
+    //   text: 'Logo',
+    //   textAlignment: textAlignment,
+    //   fontSize: AppSize.width(value: logoSize),
+    //   fontWeight: FontWeight.w700,
+    //   fontColor: Colors.white,
+
+    // );
   }
 }
