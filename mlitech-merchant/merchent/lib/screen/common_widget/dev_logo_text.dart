@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:merchent/screen/common_widget/common_text_widget.dart';
-import 'package:merchent/utils/app_size.dart';
 import 'package:merchent/widget/app_image/app_image.dart';
 
 class DevLogoText extends StatelessWidget {
@@ -22,7 +19,7 @@ class DevLogoText extends StatelessWidget {
     final isMobile = screenWidth < 400;
 
     return AppImage(
-      path: "assets/images/rewaldo-logo.png",
+      path: "assets/images/rewaldo-logo-white.png",
       width: 250,
       height: 150,
     );
