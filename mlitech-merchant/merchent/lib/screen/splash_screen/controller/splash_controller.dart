@@ -37,11 +37,8 @@ class SplashController extends GetxController {
       // /// ---------- Location Check ----------
       final coordinates = userProfile.location?.coordinates ?? <double>[];
 
-
       /// ---------- Business Name Check ----------
       final businessName = userProfile.businessName?.trim() ?? "";
-
-      
     } catch (e) {
       AppPrint.appError(e.toString(), title: "Error fetching profile");
     }

@@ -78,6 +78,7 @@ dev_dependencies:
 
 
   flutter_lints: ^5.0.0
+  flutter_native_splash: ^2.4.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -120,3 +121,19 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+  color: "#3FAE6A"
+  image: assets/images/native-splash.png
+  android_gravity: fill
+  ios_content_mode: scaleToFill
+  fullscreen: true
+
+  android_12:
+    color: "#3FAE6A"
+    image: assets/images/native-splash.png

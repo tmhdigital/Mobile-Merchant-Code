@@ -22,9 +22,11 @@ class _SplashScreenState extends State<SplashScreen> {
           value: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
           child: Scaffold(
             backgroundColor: AppColor.backgroundColor,
-            body: Center(
-            
-              child: DevLogoText(),
+            body: Image.asset(
+              "assets/images/merchant-loader.png",
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
             ),
           ),
         );
