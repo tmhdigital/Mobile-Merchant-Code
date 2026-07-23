@@ -51,7 +51,7 @@ class AppApiEndPoint {
 String _getDomain() {
   const String envBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'http://10.10.26.208:5004',
+    defaultValue: 'https://api.rewaldo.com',
   );
   try {
     return envBaseUrl;

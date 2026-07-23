@@ -62,6 +62,14 @@ android {
         }
     }
 }
+androidComponents {
+    onVariants { variant ->
+        variant.outputs.forEach { output ->
+            val impl = output as com.android.build.api.variant.impl.VariantOutputImpl
+            impl.outputFileName.set("Rewaldo: Business-v${impl.versionName.get()}.apk")
+        }
+    }
+}
 
 flutter {
     source = "../.."
