@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 
+import '../../../constant/app_color/app_theme_color.dart';
 import '../../../utils/app_size.dart';
 import '../../../widget/app_appbar/custom_app_bar.dart';
 import 'controller/terms_and_conditions_controller.dart';
@@ -15,8 +16,12 @@ class TermAndCondition extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AppThemeColor appThemeColor = Theme.of(
+      context,
+    ).extension<AppThemeColor>()!;
+
     return Scaffold(
-     
+
       appBar:  AppbarWidget(
         showLeading: true,
         text: controller.args.toString().replaceAll('-', ' ').capitalize ?? '',
@@ -48,8 +53,20 @@ class TermAndCondition extends StatelessWidget {
             padding: EdgeInsets.all(16),
             child: Html(
               data: controller.content,
-              // You'll need flutter_html package for this
-              // Or use Text widget if you want plain text
+              style: {
+                "body": Style(
+                  color: appThemeColor.text2,
+                  fontSize: FontSize(14),
+                  margin: Margins.zero,
+                  padding: HtmlPaddings.zero,
+                ),
+                "p": Style(color: appThemeColor.text2),
+                "span": Style(color: appThemeColor.text2),
+                "li": Style(color: appThemeColor.text2),
+                "h1": Style(color: appThemeColor.text2),
+                "h2": Style(color: appThemeColor.text2),
+                "h3": Style(color: appThemeColor.text2),
+              },
             ),
           );
         }),

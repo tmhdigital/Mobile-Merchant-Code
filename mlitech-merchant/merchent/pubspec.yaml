@@ -70,6 +70,7 @@ dependencies:
   get_storage: ^2.1.1
   connectivity_plus: ^6.1.4
   internet_connection_checker: ^3.0.1
+  flutter_native_splash: ^2.4.6
 
 
 dev_dependencies:
@@ -120,3 +121,19 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+
+flutter_native_splash:
+  android: true
+  ios: true
+  web: false
+
+  color: "#3FAE6A"
+  image: assets/images/native-splash.png
+  android_gravity: fill
+  ios_content_mode: scaleToFill
+  fullscreen: true
+
+  android_12:
+    color: "#3FAE6A"
+    image: assets/images/native-splash.png

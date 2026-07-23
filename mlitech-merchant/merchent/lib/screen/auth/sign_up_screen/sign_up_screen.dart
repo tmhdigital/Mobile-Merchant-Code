@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:merchent/screen/auth/sign_up_screen/widget/dropdown_widget.dart';
 import 'package:merchent/widget/app_snack_bar/app_snack_bar.dart';
 import 'package:merchent/widget/text_field_widget/email_and_phone_field.dart';
 import '../../../widget/button_widget/button_widget.dart';
@@ -42,7 +41,7 @@ class SignUpScreen extends StatelessWidget {
               //     children: [
               //       TopRoundWidget(
               TopRoundWidget(
-                hasAppBar: true,
+                hasAppBar: false,
                 height: AppSize.height(value: 300),
                 child: Padding(
                   padding: const EdgeInsets.only(
@@ -54,7 +53,7 @@ class SignUpScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: AppSize.height(value: 85)),
+                      SizedBox(height: AppSize.height(value: 48)),
                       TextWidget(
                         textAlignment: TextAlign.left,
                         text: "Join Miltech Today!",
@@ -286,8 +285,6 @@ class SignUpScreen extends StatelessWidget {
             isOptional: false,
             validator: signUpController.validatePhone,
           ),
-
-         
         ],
       ),
     );

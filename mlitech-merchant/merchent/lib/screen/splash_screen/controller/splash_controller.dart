@@ -1,4 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:merchent/screen/profile_section/profile_screen/model/profile_model.dart';
 import 'package:merchent/service/repository/profile_get_repository.dart';
@@ -37,11 +38,8 @@ class SplashController extends GetxController {
       // /// ---------- Location Check ----------
       final coordinates = userProfile.location?.coordinates ?? <double>[];
 
-
       /// ---------- Business Name Check ----------
       final businessName = userProfile.businessName?.trim() ?? "";
-
-      
     } catch (e) {
       AppPrint.appError(e.toString(), title: "Error fetching profile");
     }
@@ -51,10 +49,7 @@ class SplashController extends GetxController {
   /// SPLASH NAVIGATION LOGIC
   /// ===============================
   void goToNextScreen() async {
-    await Future.wait([
-      LocalStorage.getAllPrefData(),
-      Future.delayed(const Duration(seconds: 1)),
-    ]);
+    await LocalStorage.getAllPrefData();
 
     final accessToken = LocalStorage.token;
 
@@ -63,12 +58,11 @@ class SplashController extends GetxController {
     /// ---------- Login Check ----------
     if (accessToken.isEmpty) {
       if (getStorageServices.getIsUserFirstTime() == true) {
-        Get.offAllNamed(AppRoutes.authenticationsScreen);
-        return;
+        _navigateTo(AppRoutes.authenticationsScreen);
       } else {
-        Get.offAllNamed(AppRoutes.onBoardingScreen);
-        return;
+        _navigateTo(AppRoutes.onBoardingScreen);
       }
+      return;
     }
 
     /// ---------- Fetch Profile ----------
@@ -86,16 +80,24 @@ class SplashController extends GetxController {
 
     /// ---------- Navigation Decision ----------
     if (!isLocation) {
-      Get.offAllNamed(AppRoutes.locationScreen);
+      _navigateTo(AppRoutes.locationScreen);
       return;
     }
 
     if (!isBusiness) {
-      Get.offAllNamed(AppRoutes.shopInformationScreen);
+      _navigateTo(AppRoutes.shopInformationScreen);
       return;
     }
 
-    Get.offAllNamed(AppRoutes.userBottomNav);
+    _navigateTo(AppRoutes.userBottomNav);
+  }
+
+  /// Removes the native splash screen (kept alive since app launch) right
+  /// before handing off to the resolved first screen, so only one splash
+  /// is ever visible to the user.
+  void _navigateTo(String route) {
+    FlutterNativeSplash.remove();
+    Get.offAllNamed(route);
   }
 
   /// ===============================
