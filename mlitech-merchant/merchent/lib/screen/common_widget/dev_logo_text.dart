@@ -24,13 +24,5 @@ class DevLogoText extends StatelessWidget {
       height: 150,
     );
 
-    // return TextWidget(
-    //   text: 'Logo',
-    //   textAlignment: textAlignment,
-    //   fontSize: AppSize.width(value: logoSize),
-    //   fontWeight: FontWeight.w700,
-    //   fontColor: Colors.white,
-
-    // );
   }
 }

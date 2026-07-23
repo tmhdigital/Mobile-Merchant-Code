@@ -25,7 +25,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       "imagePath": AppImagePath.onboardingCoinImage1,
       "imageWidth": AppSize.width(value: 330),
       "imageHeight": AppSize.width(value: 220),
-      "title": 'Welcome To [Your App Name]',
+      "title": 'Welcome To Rewaldo!',
       "subtitle":
           "Every purchase brings your customers closer to exclusive benefits.",
     },
