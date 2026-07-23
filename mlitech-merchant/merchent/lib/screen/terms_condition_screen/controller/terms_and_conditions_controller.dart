@@ -1,5 +1,6 @@
 
 import 'package:get/get.dart';
+import '../../../../constant/content/privacy_policy_content.dart';
 import '../../../../service/repository/condition_repository.dart';
 import '../../../../utils/app_log/error_log.dart';
 import '../model/policy_model.dart';
@@ -8,6 +9,8 @@ import '../model/policy_model.dart';
 class TermsAndConditionsController extends GetxController {
   final CommonRepository commonRepository = CommonRepository();
   final args = Get.arguments;
+
+  static const String _privacyPolicyArg = 'privacy-policy';
 
   // Observable for the complete terms and conditions model
   var termsConditions = TermsAndConditionsModel(
@@ -27,6 +30,19 @@ class TermsAndConditionsController extends GetxController {
   }
 
   void loadData() async {
+    // The Privacy Policy is a legal document, so it is always served from
+    // the bundled static content rather than the CMS-driven endpoint used
+    // for other disclaimers (e.g. Terms & Conditions).
+    if (args == _privacyPolicyArg) {
+      termsConditions.value = TermsAndConditionsModel(
+        id: '',
+        type: _privacyPolicyArg,
+        content: kPrivacyPolicyHtml,
+      );
+      errorMessage('');
+      return;
+    }
+
     try {
       isLoading(true);
       errorMessage('');
