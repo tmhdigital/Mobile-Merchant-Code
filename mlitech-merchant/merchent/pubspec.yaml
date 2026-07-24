@@ -119,11 +119,11 @@ flutter_native_splash:
   web: false
 
   color: "#3FAE6A"
-  image: assets/images/native-splash.png
-  android_gravity: fill
-  ios_content_mode: scaleToFill
+  image: assets/images/splash-logo.png
+  android_gravity: center
+  ios_content_mode: center
   fullscreen: true
 
   android_12:
     color: "#3FAE6A"
-    image: assets/images/native-splash.png
+    image: assets/images/splash-logo.png
