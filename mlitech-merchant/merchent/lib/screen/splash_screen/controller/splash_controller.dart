@@ -55,6 +55,11 @@ class SplashController extends GetxController {
 
     appLog("Access Token => $accessToken");
 
+    /// Minimum splash duration, applies to every navigation path below
+    /// (previously only ran on the logged-in branch, so it had no effect
+    /// for first-time/logged-out users).
+    await Future.delayed(const Duration(milliseconds: 1000));
+
     /// ---------- Login Check ----------
     if (accessToken.isEmpty) {
       if (getStorageServices.getIsUserFirstTime() == true) {
@@ -68,9 +73,6 @@ class SplashController extends GetxController {
     /// ---------- Fetch Profile ----------
     await fetchProfile();
     await getFCMToken();
-
-    /// Small sync delay (race condition prevention)
-    await Future.delayed(const Duration(milliseconds: 2000));
 
     final bool isBusiness = LocalStorage.isBusiness;
     final bool isLocation = LocalStorage.isLocation;
