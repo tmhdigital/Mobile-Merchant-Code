@@ -70,7 +70,7 @@ class SplashController extends GetxController {
     await getFCMToken();
 
     /// Small sync delay (race condition prevention)
-    await Future.delayed(const Duration(milliseconds: 300));
+    await Future.delayed(const Duration(milliseconds: 2000));
 
     final bool isBusiness = LocalStorage.isBusiness;
     final bool isLocation = LocalStorage.isLocation;
