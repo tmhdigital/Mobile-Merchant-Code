@@ -1,6 +1,7 @@
 
 import 'package:get/get.dart';
 import '../../../../constant/content/privacy_policy_content.dart';
+import '../../../../constant/content/user_manual_content.dart';
 import '../../../../service/repository/condition_repository.dart';
 import '../../../../utils/app_log/error_log.dart';
 import '../model/policy_model.dart';
@@ -11,6 +12,7 @@ class TermsAndConditionsController extends GetxController {
   final args = Get.arguments;
 
   static const String _privacyPolicyArg = 'privacy-policy';
+  static const String _userManualArg = 'user-manual';
 
   // Observable for the complete terms and conditions model
   var termsConditions = TermsAndConditionsModel(
@@ -38,6 +40,19 @@ class TermsAndConditionsController extends GetxController {
         id: '',
         type: _privacyPolicyArg,
         content: kPrivacyPolicyHtml,
+      );
+      errorMessage('');
+      return;
+    }
+
+    // The User Manual is a bundled reference document, so it is served
+    // from static content rather than the CMS-driven endpoint, matching
+    // how the Privacy Policy is handled above.
+    if (args == _userManualArg) {
+      termsConditions.value = TermsAndConditionsModel(
+        id: '',
+        type: _userManualArg,
+        content: kUserManualHtml,
       );
       errorMessage('');
       return;

@@ -294,6 +294,17 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     ProfileRow(
                       appThemeColor: appThemeColor,
+                      iconData: Icons.policy,
+                      onTap: () {
+                        Get.toNamed(
+                          AppRoutes.termsAndConditionScreen,
+                          arguments: 'user-manual',
+                        );
+                      },
+                      text: "User Manual",
+                    ),
+                    ProfileRow(
+                      appThemeColor: appThemeColor,
                       iconData: Icons.delete,
                       text: "Delete Account",
                       onTap: () {
