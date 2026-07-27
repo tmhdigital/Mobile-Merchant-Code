@@ -7,6 +7,39 @@ class AppApiEndPoint {
 
   //app use base
   static final String domain = _getDomain();
+
+  /// ==========================================================
+  /// MEDIA / IMAGE URL BUILDER
+  /// ==========================================================
+  ///
+  /// Backend ab images DigitalOcean Spaces par upload karta hai aur DB mein
+  /// poora absolute URL save karta hai (https://cdn.rewaldo.com/uploads/...).
+  ///
+  /// Purane records mein abhi bhi relative path ho sakta hai (/uploads/...).
+  ///
+  /// Is helper se dono cases sahi chalte hain. Domain aur path ko seedha
+  /// string mein jorna band karein, warna absolute URL ke aage domain lag kar
+  /// "https://api.rewaldo.comhttps://cdn..." ban jata hai aur image load nahi hoti.
+  static String mediaUrl(String? path) {
+    if (path == null) return '';
+
+    final value = path.trim();
+    if (value.isEmpty) return '';
+
+    if (value.startsWith('http://') || value.startsWith('https://')) {
+      return value;
+    }
+
+    if (value.startsWith('file://') || value.startsWith('data:')) {
+      return value;
+    }
+
+    if (value.startsWith('/')) {
+      return '$domain$value';
+    }
+
+    return '$domain/$value';
+  }
   final String baseUrl = "$domain/api/v1";
   final String resetToken = "/auth/refresh-token";
   final String refreshToken = "/auth/refresh-token";

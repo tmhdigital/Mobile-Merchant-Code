@@ -39,13 +39,9 @@ class _NetworkImageWithRetryState extends State<NetworkImageWithRetry>
 
   void _setImage() {
     try {
-      final uri = Uri.tryParse(widget.imageUrl);
-      if (uri != null && (uri.isScheme('http') || uri.isScheme('https'))) {
-        _image = widget.imageUrl; // Already a valid URL
-      } else {
-        _image =
-        "${AppApiEndPoint.domain}${widget.imageUrl}"; // Append domain if needed
-      }
+      // mediaUrl() khud check kar leta hai ke path absolute URL hai ya relative,
+      // is liye yahan alag se Uri parse karne ki zaroorat nahi.
+      _image = AppApiEndPoint.mediaUrl(widget.imageUrl);
     } catch (e) {
       log("Error setting image URL: $e");
       _image = widget.imageUrl; // Use the raw URL if parsing fails

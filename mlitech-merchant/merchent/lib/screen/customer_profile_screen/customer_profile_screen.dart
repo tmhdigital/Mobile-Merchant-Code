@@ -52,7 +52,7 @@ class CustomerProfilePage extends StatelessWidget {
                 children: [
                   AppImageCircular(
                     fit: BoxFit.cover,
-                    url: "${AppApiEndPoint.domain}${customer.profile}",
+                    url: AppApiEndPoint.mediaUrl(customer.profile),
                     width: AppSize.width(value: 148),
                     height: AppSize.width(value: 148),
                   ),
@@ -120,24 +120,24 @@ class CustomerProfilePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Obx(
-                      () => _buildInfoRow(
+                          () => _buildInfoRow(
                         'Points Balance:',
                         (Get.find<CustomerTransactionController>()
-                                    .tierData
-                                    .value
-                                    ?.availablePoints ??
-                                0)
+                            .tierData
+                            .value
+                            ?.availablePoints ??
+                            0)
                             .toStringAsFixed(2),
                       ),
                     ),
                     const SizedBox(height: 8),
                     Obx(
-                      () => _buildInfoRow(
+                          () => _buildInfoRow(
                         'Tier:',
                         Get.find<CustomerTransactionController>()
-                                .tierData
-                                .value
-                                ?.tierName ??
+                            .tierData
+                            .value
+                            ?.tierName ??
                             'N/A',
                       ),
                     ),
@@ -238,14 +238,14 @@ class CustomerProfilePage extends StatelessWidget {
                         return _buildTransactionRow(
                           sl: '${index + 1}',
                           date:
-                              transaction.createdAt != null &&
-                                  transaction.createdAt!.length >= 10
+                          transaction.createdAt != null &&
+                              transaction.createdAt!.length >= 10
                               ? transaction.createdAt!.substring(0, 10)
                               : 'N/A',
                           reward:
-                              '${(transaction.pointsEarned ?? 0).toStringAsFixed(2)}',
+                          '${(transaction.pointsEarned ?? 0).toStringAsFixed(2)}',
                           pointsUsed:
-                              '${(transaction.pointRedeemed ?? 0).toStringAsFixed(2)}',
+                          '${(transaction.pointRedeemed ?? 0).toStringAsFixed(2)}',
                           textColor: appThemeColor.common,
                         );
                       },
