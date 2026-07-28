@@ -49,6 +49,7 @@ const String kUserManualHtml = '''
 <li>Tap New Transaction from the home screen.</li>
 <li>Find the customer by entering their loyalty Card ID (e.g. XY9OWARA) and tapping Find, or by scanning their card/QR code.</li>
 <li>Enter the bill amount for the purchase.</li>
+<li>Based on your eligible tier and the purchase value, the system will calculate the points to be issued and display them on the screen.</li>
 <li>If the customer has an available gift card or wants to redeem points, apply it: enter the points to redeem and tap Apply Calculation. The screen will show Available Points, Gift Card Available, and the Gross Value of Promotions applied.</li>
 <li>The Merchant can also apply a promotion saved by the customer.</li>
 <li>Review the calculated Point Redeemed value and the adjusted total and Submit Complete Transaction.</li>
