@@ -2,22 +2,12 @@
 /// "Rewaldo Business App User Manual" document for the Rewaldo Merchant
 /// Application. Rendered as HTML via flutter_html.
 const String kUserManualHtml = '''
-<p><strong>REWALDO</strong></p>
-<p>Loyalty &amp; Rewards Platform</p>
-<p><strong>Business App</strong></p>
+<h3><strong>REWALDO</strong></h3>
+<h4>Loyalty &amp; Rewards Platform</h4>
+<h3><strong>Business App</strong></h3>
 <p>In-store point-of-sale guide for issuing points and rewards using the Rewaldo mobile business (merchant) application.</p>
-<p><strong>Mobile Business Application</strong></p>
-<p>User Manual</p>
-<p>Version 1.0</p>
-<p><strong>Table of Contents</strong></p>
-<p><strong>1. Introduction</strong></p>
-<p><strong>2. Getting Started</strong></p>
-<p><strong>3. Home Dashboard</strong></p>
-<p><strong>4. Sell Management</strong></p>
-<p><strong>5. Customer Details</strong></p>
-<p><strong>6. Notifications</strong></p>
-<p><strong>7. Profile &amp; Settings</strong></p>
-<p><strong>8. Troubleshooting &amp; Support</strong></p>
+<h3><strong>Mobile Business Application</strong></h3>
+<p><strong>User Manual: </strong>Version 1.0</p>
 <h1>1. Introduction</h1>
 <p>The Rewaldo Business App is the point-of-sale companion app used by retail staff to issue loyalty points, redeem customer rewards, look up customer loyalty accounts, and track daily sales performance — all from a mobile device at the counter.</p>
 <p><strong>Note: </strong>This manual covers the Business (Merchant) mobile app. Business owners who need web-based reporting, staff management, and campaign tools should also refer to the Business Dashboard manual.</p>
