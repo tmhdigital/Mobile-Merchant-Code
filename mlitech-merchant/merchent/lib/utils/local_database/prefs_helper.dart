@@ -21,7 +21,7 @@ class PrefsHelper {
   static String myRole = "";
   static String mySubscription = "";
   static String localizationLanguageCode = 'en';
-  static String localizationCountryCode = 'US';
+  static String localizationCountryCode = 'PK';
 
   ///<<<======================== Get All Data Form Shared Preference ==============>
 
@@ -40,7 +40,7 @@ class PrefsHelper {
     isNotifications = preferences.getBool("isNotifications") ?? true;
     mySubscription = preferences.getString("mySubscription") ?? "shopping";
     localizationCountryCode =
-        preferences.getString("localizationCountryCode") ?? "US";
+        preferences.getString("localizationCountryCode") ?? "PK";
     localizationLanguageCode =
         preferences.getString("localizationLanguageCode") ?? "en";
 

@@ -34,7 +34,7 @@ class EmailAndPhoneField extends StatefulWidget {
     this.filled = true,
     this.defaultType = InputFieldType.email,
     this.showTypeSelector = true,
-    this.allowedCountryCodes = const ['PK', 'BD'],
+    this.allowedCountryCodes = const ['PK'],
     this.defaultCountryCode = 'PK',
     this.alwaysPhone = false,
   });

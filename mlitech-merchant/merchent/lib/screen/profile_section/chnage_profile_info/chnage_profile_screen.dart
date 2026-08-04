@@ -333,6 +333,9 @@ class _ChnageProfileScreenState extends State<ChnageProfileScreen> {
                         layout: Layout.vertical,
                         showStates: true,
                         showCities: false,
+                        countryFilter: const [CscCountry.Pakistan],
+                        defaultCountry: CscCountry.Pakistan,
+                        disableCountry: true,
                         searchBarRadius: 0,
                         selectedItemStyle: TextStyle(
                           color: appThemeColor.text4,

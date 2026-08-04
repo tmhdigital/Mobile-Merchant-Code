@@ -33,28 +33,6 @@ class ShopInformationController extends GetxController {
       "Peshawar",
       "Quetta",
     ],
-    "United Arab Emirates": [
-      "Abu Dhabi",
-      "Dubai",
-      "Sharjah",
-      "Ajman",
-      "Ras Al Khaimah",
-      "Fujairah",
-      "Umm Al Quwain",
-    ],
-    "Oman": ["Muscat"],
-    "Qatar": ["Doha"],
-    "Kuwait": ["Kuwait City"],
-    "Bahrain": ["Manama"],
-    "Saudi Arabia": ["Jeddah", "Riyadh"],
-    "Bangladesh": ["Dhaka"],
-    "United Kingdom": [
-      "London",
-      "Manchester",
-      "Birmingham",
-      "Glasgow",
-      "Liverpool",
-    ],
   };
 
   final RxList<String> countries = countryCityData.keys.toList().obs;
