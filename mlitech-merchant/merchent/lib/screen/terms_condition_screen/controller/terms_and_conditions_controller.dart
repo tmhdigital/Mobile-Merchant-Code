@@ -1,6 +1,7 @@
 
 import 'package:get/get.dart';
 import '../../../../constant/content/privacy_policy_content.dart';
+import '../../../../constant/content/terms_and_conditions_content.dart';
 import '../../../../constant/content/user_manual_content.dart';
 import '../../../../service/repository/condition_repository.dart';
 import '../../../../utils/app_log/error_log.dart';
@@ -12,6 +13,7 @@ class TermsAndConditionsController extends GetxController {
   final args = Get.arguments;
 
   static const String _privacyPolicyArg = 'privacy-policy';
+  static const String _termsAndConditionsArg = 'terms-and-conditions';
   static const String _userManualArg = 'user-manual';
 
   // Observable for the complete terms and conditions model
@@ -40,6 +42,19 @@ class TermsAndConditionsController extends GetxController {
         id: '',
         type: _privacyPolicyArg,
         content: kPrivacyPolicyHtml,
+      );
+      errorMessage('');
+      return;
+    }
+
+    // The Terms & Conditions are a legal document, so they are always
+    // served from the bundled static content, matching how the Privacy
+    // Policy is handled above.
+    if (args == _termsAndConditionsArg) {
+      termsConditions.value = TermsAndConditionsModel(
+        id: '',
+        type: _termsAndConditionsArg,
+        content: kTermsAndConditionsHtml,
       );
       errorMessage('');
       return;
