@@ -48,7 +48,7 @@ class RefreshTokenRepository {
       }
 
       final body = storedRefreshToken.isNotEmpty
-          ? {'refreshToken': storedRefreshToken}
+          ? {'refreshToken': storedRefreshToken, 'device': 'merchant'}
           : null;
 
       appLog('resetToken: calling ${AppApiEndPoint.instance.resetToken}');
